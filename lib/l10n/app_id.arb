@@ -1,0 +1,88 @@
+{
+  "@@locale": "id",
+  "signInDescription": "Masuk ke akun Anda",
+  "@signInDescription": {
+    "description": "Deskripsi untuk halaman masuk",
+    "type": "text"
+  },
+  "signInButton": "Masuk",
+  "@signInButton": {
+    "description": "Teks untuk tombol masuk",
+    "type": "text"
+  },
+  "signUpDescription": "Buat akun baru",
+  "@signUpDescription": {
+    "description": "Deskripsi untuk halaman pendaftaran",
+    "type": "text"
+  },
+  "signUpButton": "Daftar",
+  "@signUpButton": {
+    "description": "Teks untuk tombol daftar",
+    "type": "text"
+  },
+  "email": "Email",
+  "@email": {
+    "description": "Label untuk kolom input email",
+    "type": "text"
+  },
+  "emailHint": "Masukkan alamat email Anda",
+  "@emailHint": {
+    "description": "Teks petunjuk untuk kolom input email",
+    "type": "text"
+  },
+  "password": "Kata Sandi",
+  "@password": {
+    "description": "Label untuk kolom input kata sandi",
+    "type": "text"
+  },
+  "passwordHint": "Masukkan kata sandi Anda",
+  "@passwordHint": {
+    "description": "Teks petunjuk untuk kolom input kata sandi",
+    "type": "text"
+  },
+  "confirmPassword": "Konfirmasi Kata Sandi",
+  "@confirmPassword": {
+    "description": "Label untuk kolom input konfirmasi kata sandi",
+    "type": "text"
+  },
+  "confirmPasswordHint": "Masukkan kembali kata sandi Anda",
+  "@confirmPasswordHint": {
+    "description": "Teks petunjuk untuk kolom input konfirmasi kata sandi",
+    "type": "text"
+  },
+  "forgotPassword": "Lupa Kata Sandi?",
+  "@forgotPassword": {
+    "description": "Teks untuk tautan lupa kata sandi",
+    "type": "text"
+  },
+  "resetPassword": "Atur Ulang Kata Sandi",
+  "@resetPassword": {
+    "description": "Teks untuk tombol atur ulang kata sandi",
+    "type": "text"
+  },
+  "home": "Beranda",
+  "@home": {
+    "description": "Teks untuk halaman beranda",
+    "type": "text"
+  },
+  "homeDescription": "Selamat datang di halaman beranda",
+  "@homeDescription": {
+    "description": "Deskripsi untuk halaman beranda",
+    "type": "text"
+  },
+  "profile": "Profil",
+  "@profile": {
+    "description": "Teks untuk halaman profil",
+    "type": "text"
+  },
+  "profileDescription": "Kelola informasi profil Anda",
+  "@profileDescription": {
+    "description": "Deskripsi untuk halaman profil",
+    "type": "text"
+  },
+  "signOut": "Keluar",
+  "@signOut": {
+    "description": "Teks untuk tombol keluar",
+    "type": "text"
+  }
+}

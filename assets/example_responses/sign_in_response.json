@@ -1,0 +1,7 @@
+{
+  "success": true,
+  "data": {
+    "userId": "12345",
+    "token": "abcdefg1234567"
+  }
+}

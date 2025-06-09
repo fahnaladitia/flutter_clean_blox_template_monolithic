@@ -1,0 +1,88 @@
+{
+  "@@locale": "en",
+  "signInDescription": "Sign in to your account",
+  "@signInDescription": {
+    "description": "Description for the sign-in page",
+    "type": "text"
+  },
+  "signInButton": "Sign In",
+  "@signInButton": {
+    "description": "Text for the sign-in button",
+    "type": "text"
+  },
+  "signUpDescription": "Create a new account",
+  "@signUpDescription": {
+    "description": "Description for the sign-up page",
+    "type": "text"
+  },
+  "signUpButton": "Sign Up",
+  "@signUpButton": {
+    "description": "Text for the sign-up button",
+    "type": "text"
+  },
+  "email": "Email",
+  "@email": {
+    "description": "Label for the email input field",
+    "type": "text"
+  },
+  "emailHint": "Enter your email address",
+  "@emailHint": {
+    "description": "Hint text for the email input field",
+    "type": "text"
+  },
+  "password": "Password",
+  "@password": {
+    "description": "Label for the password input field",
+    "type": "text"
+  },
+  "passwordHint": "Enter your password",
+  "@passwordHint": {
+    "description": "Hint text for the password input field",
+    "type": "text"
+  },
+  "confirmPassword": "Confirm Password",
+  "@confirmPassword": {
+    "description": "Label for the confirm password input field",
+    "type": "text"
+  },
+  "confirmPasswordHint": "Re-enter your password",
+  "@confirmPasswordHint": {
+    "description": "Hint text for the confirm password input field",
+    "type": "text"
+  },
+  "forgotPassword": "Forgot Password?",
+  "@forgotPassword": {
+    "description": "Text for the forgot password link",
+    "type": "text"
+  },
+  "resetPassword": "Reset Password",
+  "@resetPassword": {
+    "description": "Text for the reset password button",
+    "type": "text"
+  },
+  "home": "Home",
+  "@home": {
+    "description": "Title for the home page",
+    "type": "text"
+  },
+  "homeDescription": "Welcome to the home page",
+  "@homeDescription": {
+    "description": "Description for the home page",
+    "type": "text"
+  },
+  "profile": "Profile",
+  "@profile": {
+    "description": "Title for the profile page",
+    "type": "text"
+  },
+  "profileDescription": "View and edit your profile information",
+  "@profileDescription": {
+    "description": "Description for the profile page",
+    "type": "text"
+  },
+  "signOut": "Sign Out",
+  "@signOut": {
+    "description": "Text for the sign-out button",
+    "type": "text"
+  }
+}
