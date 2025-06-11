@@ -107,3 +107,13 @@ if ((err.response!.statusCode ?? 0) >= 401 &&
   return NetworkException.fromMap(err.response!.data);
 }
 ```
+
+## 🔏 Your Keystore.jks & key.properties
+Place your `keystore.jks` file in `android/app/` and create a `key.properties` file with the following content:
+
+```properties
+storePassword=your_store_password
+keyPassword=your_key_password
+keyAlias=your_key_alias
+storeFile=keystore.jks
+```

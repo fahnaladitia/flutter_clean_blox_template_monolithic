@@ -27,7 +27,7 @@
     </queries>
 
     <application
-        android:label="flutter_clean_blox_template"
+        android:label="Clean BLoX"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

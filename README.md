@@ -18,6 +18,8 @@ Created with ❤️ by [**Pahnal Aditia**](https://www.linkedin.com/in/pahnaladi
       - [1. Project \& Package Name](#1-project--package-name)
       - [2. App Links \& Universal Links](#2-app-links--universal-links)
     - [▶️ Run the App](#️-run-the-app)
+    - [For Android APK build](#for-android-apk-build)
+    - [For iOS build (Note: requires macOS)](#for-ios-build-note-requires-macos)
   - [📝 Notes](#-notes)
   - [🧪 Coming Soon](#-coming-soon)
 
@@ -40,6 +42,10 @@ Created with ❤️ by [**Pahnal Aditia**](https://www.linkedin.com/in/pahnaladi
   * `Release-Staging`
   * `Release-Production`
 * ⚡ **Quick Start** — Minimal setup to begin development
+* 🔏 **Signed Android APK Support** — Pre-configured signing setup (`keystore` & `key.properties`) for Play Store release  
+* 🤖 **CI/CD with GitHub Actions** — Automated APK builds based on flavors (`staging`, `production`)
+
+
 
 ---
 
@@ -106,6 +112,29 @@ dart run --flavor staging -t lib/main_staging.dart
 dart run --flavor production -t lib/main_production.dart
 ```
 
+### For Android APK build
+
+```bash
+# For staging
+flutter build apk -v --obfuscate --split-debug-info=out/android --flavor staging -t lib/main_staging.dart
+# For production
+flutter build apk -v --obfuscate --split-debug-info=out/android --flavor production -t lib/main_production.dart
+```
+
+
+### For iOS build (Note: requires macOS)
+Not Tested, but you can use the following commands to build for iOS:
+```bash
+# For staging
+flutter build ios --flavor staging -t lib/main_staging.dart
+
+flutter build ipa --obfuscate --split-debug-info=out/android --flavor staging -t lib/main_staging.dart
+# For production
+flutter build ios --flavor production -t lib/main_production.dart
+
+flutter build ipa --obfuscate --split-debug-info=out/android --flavor production -t lib/main_production.dart
+```
+
 ---
 
 ## 📝 Notes
@@ -133,7 +162,6 @@ dart run --flavor production -t lib/main_production.dart
 ## 🧪 Coming Soon
 
 * [ ] ✅ **Unit & Widget Testing** — With [`flutter_test`](https://pub.dev/packages/flutter_test) & [`mocktail`](https://pub.dev/packages/mocktail)
-* [ ] ✅ **CI/CD Pipeline** — GitHub Actions workflow
 * [ ] ✅ **Firebase Integration** — Analytics, Auth, Firestore, Crashlytics
 * [ ] ✅ **Push Notification Setup** — With Firebase Cloud Messaging
 
