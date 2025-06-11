@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        flavor: [staging, production]
+        flavor: [production]
 
     steps:
       - name: 🔄 Checkout Repository
