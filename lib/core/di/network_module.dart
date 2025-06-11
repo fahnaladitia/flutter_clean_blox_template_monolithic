@@ -9,8 +9,8 @@ part of 'injection.dart';
 class NetworkModule {
   NetworkModule._();
 
-  static Future<void> init() async {
-    final dio = AppRestClient.instance(baseURL: AppConstants.baseUrl);
+  static Future<void> init({required String baseURL}) async {
+    final dio = AppRestClient.instance(baseURL: baseURL);
     getIt.registerLazySingleton<Dio>(() => dio);
 
     getIt.registerLazySingleton(() => AuthApi(getIt()));

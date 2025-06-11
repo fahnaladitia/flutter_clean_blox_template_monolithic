@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_clean_blox_template/app/router/route.dart';
-import 'package:flutter_clean_blox_template/core/common/constants/app_constants.dart';
 import 'package:flutter_clean_blox_template/presentation/theme/theme.dart';
 import 'package:flutter_clean_blox_template/presentation/theme/util.dart';
 import 'package:flutter_clean_blox_template/l10n/app_localizations.dart';
@@ -21,7 +20,6 @@ class MyApp extends StatelessWidget {
     final TextTheme textTheme = createTextTheme(context, "Roboto", "Roboto");
     final MaterialTheme theme = MaterialTheme(textTheme);
     return MaterialApp.router(
-      title: AppConstants.appName,
       debugShowCheckedModeBanner: kDebugMode,
       routerConfig: AppRoute.router,
       supportedLocales: L10n.all,
@@ -29,7 +27,6 @@ class MyApp extends StatelessWidget {
       // Set the default locale, you can change it based on user preference
       locale: const Locale('en'),
       darkTheme: theme.dark(),
-
       theme: theme.light(),
     );
   }

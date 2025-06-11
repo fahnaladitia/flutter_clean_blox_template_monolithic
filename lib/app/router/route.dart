@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:chucker_flutter/chucker_flutter.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:flutter_clean_blox_template/presentation/pages/main/main_page.dart';
@@ -28,9 +29,10 @@ class AppRoute {
 
   /// Create and expose your router instance
   static final GoRouter router = GoRouter(
-    initialLocation: Platform.isAndroid ? splash : main,
+    initialLocation: Platform.isAndroid ? splashPath : mainPath,
     observers: [
       SentryNavigatorObserver(),
+      ChuckerFlutter.navigatorObserver,
       // Add any other observers if needed
     ],
     routes: [

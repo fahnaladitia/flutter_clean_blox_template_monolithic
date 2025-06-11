@@ -13,7 +13,6 @@ import 'package:flutter_clean_blox_template/domain/repositories/auth_repository.
 import 'package:flutter_clean_blox_template/data/sources/local/databases/auth_database.dart';
 import 'package:flutter_clean_blox_template/data/sources/remote/api/auth_api.dart';
 
-import 'package:flutter_clean_blox_template/core/common/constants/app_constants.dart';
 import 'package:flutter_clean_blox_template/core/config/app_rest_client.dart';
 
 part 'bloc_module.dart';
@@ -52,8 +51,8 @@ class Injection {
   /// }
   /// ```
   ///
-  static Future<void> init() async {
-    await NetworkModule.init();
+  static Future<void> init({required String baseURL}) async {
+    await NetworkModule.init(baseURL: baseURL);
     await DatabaseModule.init();
     await RepositoryModule.init();
     await UseCaseModule.init();

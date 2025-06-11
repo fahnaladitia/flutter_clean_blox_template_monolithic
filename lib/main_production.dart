@@ -26,7 +26,10 @@ void main() async {
       kDebugMode; // Show Chucker only in debug mode, if you want to see it in release mode, set to true
 
   // Initialize dependency injection
-  await Injection.init();
+  const String baseURL =
+      'https://api.example.com'; // Replace with your actual base URL
+
+  await Injection.init(baseURL: baseURL);
 
   Bloc.observer = SimpleBlocObserver(); // Set up a simple Bloc observer
 
