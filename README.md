@@ -26,7 +26,6 @@ Created by **[Pahnal Aditia](https://www.linkedin.com/in/pahnaladitia)** ❤️
           - [2. Android App Links](#2-android-app-links)
       - [📝 Notes](#-notes)
     - [📚 Credits](#-credits)
-        - [This template is inspired by:](#this-template-is-inspired-by)
     - [🧪 Coming Soon](#-coming-soon)
 ---
 
@@ -40,7 +39,6 @@ Created by **[Pahnal Aditia](https://www.linkedin.com/in/pahnaladitia)** ❤️
 - 🛡 **Error Tracking** — Integrated [`sentry_flutter`](https://pub.dev/packages/sentry_flutter).
 - 🔗 **Deep Links & App Links** — Configured with [`go_router`](https://pub.dev/packages/go_router), supporting Android & iOS.
 - 🖼 **UI Tools** — App icons and splash screens via `flutter_launcher_icons` and `flutter_native_splash`.
-- 🚀 **Production Ready** — Best practices by default.
 - ⚡ **Quick Setup** — Minimal config to get started fast.
 
 ---
@@ -188,14 +186,35 @@ https://yourdomain.com/.well-known/assetlinks.json
 ---
 
 ### 📚 Credits
-##### This template is inspired by:
-- Clean Architecture principles by Uncle Bob
-- BLoC library by Felix Angelov
-- Community tools like Dio, GetIt, and Sentry
-  
 
+This template is inspired by:
+
+- **Clean Architecture** principles by *Robert C. Martin (Uncle Bob)*
+- **BLoC** state management by [Felix Angelov](https://github.com/felangel)
+- Open-source community tools like:
+  - [`dio`](https://pub.dev/packages/dio)
+  - [`get_it`](https://pub.dev/packages/get_it)
+  - [`sentry_flutter`](https://pub.dev/packages/sentry_flutter)
+  - [`flutter_bloc`](https://pub.dev/packages/flutter_bloc)
+  - [`go_router`](https://pub.dev/packages/go_router)
+- **Flutter** and its ecosystem for making app development delightful
+- **Pahnal Aditia** for creating this template to help others kickstart their Flutter projects
+- **All contributors** who have improved this template over time
+
+---
 ### 🧪 Coming Soon
 
-- [ ] Unit & widget testing setup
-- [ ] GitHub Actions CI/CD
-- [ ] Firebase support
+- [ ] ✅ **Unit & Widget Testing Setup**  
+  Using [`flutter_test`](https://pub.dev/packages/flutter_test) along with mocking tools like [`mocktail`](https://pub.dev/packages/mocktail) for thorough test coverage.
+
+- [ ] ✅ **CI/CD with GitHub Actions**  
+  Automated build, test, and deployment pipeline using GitHub Actions.
+
+- [ ] ✅ **Firebase Integration**  
+  Includes Analytics, Crashlytics, Authentication, Firestore, and more.
+
+- [ ] ✅ **Push Notifications Setup**  
+  Full configuration of Firebase Cloud Messaging (FCM) for both Android and iOS.
+
+- [ ] ✅ **Multiple Flavors Support (dev, staging, prod)**  
+  Full support for multiple environments via Flutter’s `--flavor` option and environment-specific configuration (e.g. API base URLs, Firebase options).
