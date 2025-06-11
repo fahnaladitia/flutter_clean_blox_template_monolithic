@@ -1,0 +1,23 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.yourcompany.yourapp",
+      "sha256_cert_fingerprints": [
+        "Replace with your app's SHA-256 fingerprint",
+        "How to get it: https://developer.android.com/studio/publish/app-signing#generate-key",
+        "For debug builds, you can use the debug keystore located at ~/.android/debug.keystore",
+        "For release builds, use the keystore you created for signing your app",
+        "Example: 3F:5A:6B:7C:8D:9E:0F:1A:2B:3C:4D:5E:6F:7A:8B:9C:A0:B1:C2:D3:E4:F5:G6:H7:I8:J9",
+        "Make sure to replace this with your actual SHA-256 fingerprint",
+        "== OR ==",
+        "You can also run the following command in your terminal to get the SHA-256 fingerprint:",
+        "Example: ./gradlew signingReport",
+        "This will show you the SHA-256 fingerprint for both debug and release builds",
+        "Upload the assetlinks.json file to the root of your web server",
+        "and ensure it is accessible at https://yourdomain.com/.well-known/assetlinks.json"
+      ]
+    }
+  }
+]

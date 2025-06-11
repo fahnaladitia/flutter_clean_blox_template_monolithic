@@ -7,6 +7,7 @@ import 'package:flutter_clean_blox_template/presentation/pages/home/home_page.da
 import 'package:flutter_clean_blox_template/presentation/pages/profile/profile_page.dart';
 import 'package:flutter_clean_blox_template/presentation/utils/context_ext.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:go_router/go_router.dart';
 
 /// =========================================================
 /// Created by Pahnal Aditia
@@ -45,7 +46,7 @@ class _MainPageState extends State<MainPage> {
         }
 
         if (state is AuthUnauthenticatedState) {
-          context.pushNamedAndRemoveUntil(AppRoute.signIn);
+          context.goNamed(AppRoute.signIn);
         }
 
         if (state is AuthErrorState) {

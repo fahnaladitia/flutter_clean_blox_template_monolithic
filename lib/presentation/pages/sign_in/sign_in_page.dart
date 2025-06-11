@@ -9,6 +9,7 @@ import 'package:flutter_clean_blox_template/presentation/utils/spacer_ext.dart';
 import 'package:flutter_clean_blox_template/presentation/widgets/basic_button.dart';
 import 'package:flutter_clean_blox_template/presentation/widgets/basic_scaffold.dart';
 import 'package:flutter_clean_blox_template/presentation/widgets/basic_text_input.dart';
+import 'package:go_router/go_router.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
@@ -49,7 +50,7 @@ class _SignInPageState extends State<SignInPage> {
       child: BlocListener<SignInBloc, SignInState>(
         listener: (context, state) {
           if (state is SignInSuccess) {
-            context.pushNamedAndRemoveUntil(AppRoute.main);
+            context.goNamed(AppRoute.main);
           } else if (state is SignInFailure) {
             context.showError(state.error);
           }

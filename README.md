@@ -9,9 +9,8 @@ Created by **[Pahnal Aditia](https://www.linkedin.com/in/pahnaladitia)** ❤️
 - [🚀 Flutter CleanBLoX Template](#-flutter-cleanblox-template)
   - [📖 Table of Contents](#-table-of-contents)
   - [✨ Features](#-features)
-  - [📦 Tech Stack](#-tech-stack)
+  - [🧰 Tech Stack](#-tech-stack)
   - [🗂 Project Structure](#-project-structure)
-  - [⚙️ Features](#️-features)
   - [🚀 Getting Started](#-getting-started)
     - [Setup Instructions](#setup-instructions)
       - [1. Prepare your packages name](#1-prepare-your-packages-name)
@@ -21,102 +20,58 @@ Created by **[Pahnal Aditia](https://www.linkedin.com/in/pahnaladitia)** ❤️
         - [Set your API base URL in `lib/core/constants/app_constants.dart`:](#set-your-api-base-url-in-libcoreconstantsapp_constantsdart)
       - [4. Handle API errors globally](#4-handle-api-errors-globally)
         - [Handle API Errors Bad Request, Unauthorized, etc. in `lib/core/config/interceptors/error_interceptor.dart`:](#handle-api-errors-bad-request-unauthorized-etc-in-libcoreconfiginterceptorserror_interceptordart)
+      - [5. App Links \& Deep Links](#5-app-links--deep-links)
+        - [To enable deep linking and app links for both iOS and Android, you need to set up the following (file examples in `applinks/apple_app_site_association and apps/assetlinks.json`):](#to-enable-deep-linking-and-app-links-for-both-ios-and-android-you-need-to-set-up-the-following-file-examples-in-applinksapple_app_site_association-and-appsassetlinksjson)
+          - [1. IOS Universal Links](#1-ios-universal-links)
+          - [2. Android App Links](#2-android-app-links)
       - [📝 Notes](#-notes)
     - [📚 Credits](#-credits)
         - [This template is inspired by:](#this-template-is-inspired-by)
     - [🧪 Coming Soon](#-coming-soon)
 ---
 
-
-
 ## ✨ Features
 
-- ***Clean Architecture*** - Contains presentation, domain, and data layers.
-- ***BLoC Pattern*** - State management using the BLoC pattern.
-- ***Network Logging*** - Integrated Dio with custom network logger.
-- ***Dependency Injection*** - Uses GetIt for managing dependencies.
-- ***Internationalization*** - Supports multiple languages with intl package.
-- ***Error Tracking*** - Integrated Sentry for global error tracking.
+- ✅ **Clean Architecture** — Layered structure: `presentation`, `domain`, and `data`.
+- 🧠 **BLoC Pattern** — State management with [`flutter_bloc`](https://pub.dev/packages/flutter_bloc).
+- 🌐 **Network Logging** — With [`dio`](https://pub.dev/packages/dio), custom logger, and [`chucker_flutter`](https://pub.dev/packages/chucker_flutter).
+- 🔌 **Dependency Injection** — Powered by [`get_it`](https://pub.dev/packages/get_it).
+- 🌍 **Localization** — Supports multiple locales using [`intl`](https://pub.dev/packages/intl).
+- 🛡 **Error Tracking** — Integrated [`sentry_flutter`](https://pub.dev/packages/sentry_flutter).
+- 🔗 **Deep Links & App Links** — Configured with [`go_router`](https://pub.dev/packages/go_router), supporting Android & iOS.
+- 🖼 **UI Tools** — App icons and splash screens via `flutter_launcher_icons` and `flutter_native_splash`.
+- 🚀 **Production Ready** — Best practices by default.
+- ⚡ **Quick Setup** — Minimal config to get started fast.
 
 ---
 
-## 📦 Tech Stack
+## 🧰 Tech Stack
 
-| Layer             | Tools / Packages                              |
-|------------------|------------------------------------------------|
-| 🧠 State Management     | [flutter_bloc](https://pub.dev/packages/flutter_bloc) |
-| 🌐 Networking     | [dio](https://pub.dev/packages/dio) + custom [cote_network_logger]() |
-| 🔌 DI             | [get_it](https://pub.dev/packages/get_it)     |
-| 🌍 Localization   | [intl](https://pub.dev/packages/intl)         |
-| 🪵 Logging        | [logger](https://pub.dev/packages/logger), [chucker_flutter](https://pub.dev/packages/chucker_flutter) |
-| 🧱 Architecture   | Clean Architecture (presentation, domain, data) |
-| 🛡 Error Tracking | [sentry_flutter](https://pub.dev/packages/sentry_flutter) |
+| Category               | Package(s)                                                                                                                                                  |
+|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 🧠 State Management     | [`flutter_bloc`](https://pub.dev/packages/flutter_bloc)                                                                                                     |
+| 🌐 Networking           | [`dio`](https://pub.dev/packages/dio), `cote_network_logger`, [`chucker_flutter`](https://pub.dev/packages/chucker_flutter)                                |
+| 🔌 Dependency Injection | [`get_it`](https://pub.dev/packages/get_it)                                                                                                                 |
+| 🌍 Localization         | [`intl`](https://pub.dev/packages/intl)                                                                                                                     |
+| 🔗 Routing & Deep Links | [`go_router`](https://pub.dev/packages/go_router)                                                                                                           |
+| 🛡 Error Tracking       | [`sentry_flutter`](https://pub.dev/packages/sentry_flutter)                                                                                                 |
+| 📦 Package Management   | [`change_app_package_name`](https://pub.dev/packages/change_app_package_name)                                                                               |
+| 🖼 UI Assets            | [`flutter_launcher_icons`](https://pub.dev/packages/flutter_launcher_icons), [`flutter_native_splash`](https://pub.dev/packages/flutter_native_splash)       |
 
 ---
 
 ## 🗂 Project Structure
-```
-flutter_clean_blox_template/
+
+```bash
 lib/
-├── main.dart // Entry point of the application
-├── app/
-│   ├── my_app.dart // Main application widget
-│   ├── router/ // Navigation and routing setup
-├── core/
-│   ├── common/
-│   │   ├── constants/ // Application constants
-│   │   ├── exceptions/ // Custom exceptions
-│   │   ├── usecases/ // Common use cases
-│   ├── config/
-│   │   ├── interceptors/ // Network interceptors
-│   │   │   ├── error_interceptor.dart // Handles API errors globally
-│   │   │   ├── token_interceptor.dart // Handles token management
-│   │   ├── app_rest_client.dart // REST client configuration
-│   ├── di/
-│   │   ├── bloc_module.dart // BLoC dependency injection
-│   │   ├── database_module.dart // Database dependency injection
-│   │   ├── injection.dart // Main dependency injection setup
-│   │   ├── network_module.dart // Network dependency injection
-│   │   ├── repository_module.dart // Repository dependency injection
-│   │   ├── usecase_module.dart // Use case dependency injection
-│   ├── utils/
-│   │   ├── validators.dart // Input validators
-├── data/
-│   ├── repositories/ // Data repositories
-│   ├── mappers/ // For mapping dto, entities, and models
-│   ├── sources/ 
-│   │   ├── local/
-│   │   │   ├── databases/ // Local database sources
-│   │   │   ├── entities/ // Local data entities
-│   │   ├── remote/
-│   │   │   ├── api/ // Remote API sources
-│   │   │   ├── dto/
-│   │   │   │   ├── requests/ // API request DTOs
-│   │   │   │   ├── responses/ // API response DTOs
-│   │   │   ├── firebase/ // Firebase sources 
-├── l10n/ // Localization files 
-├── domain/
-│   ├── models/ // Domain models
-│   ├── repositories/ // Domain repositories
-│   ├── usecases/ // Domain use cases (business logic) usecase & param
-├── presentation/ 
-│   ├── blocs/ // Global BLoC classes 
-│   ├── pages/ // UI pages
-│   ├── widgets/ // Reusable UI components
-│   ├── themes/ // Theme and styling
+├── app/                 # App setup and routing
+├── core/                # Configs, constants, di, interceptors
+├── data/                # Data sources, DTOs, mappers, repositories
+├── domain/              # Use cases, models, repositories
+├── presentation/        # Pages, widgets, blocs, themes
+├── l10n/                # Localization files
+└── main.dart            # App entry point
 ```
----
-
-## ⚙️ Features
-
-- ✅ Built-in **Clean Architecture** layers
-- ✅ Ready-to-use **BLoC** pattern
-- ✅ Network logging with **Dio + Chucker**
-- ✅ Global error tracking with **Sentry**
-- ✅ **GetIt** for dependency injection
-- ✅ Support for internationalization (**intl**)
-- ✅ Custom logger via `cote_network_logger`
-
 ---
 
 ## 🚀 Getting Started
@@ -156,6 +111,7 @@ await SentryFlutter.init(
 ##### Set your API base URL in `lib/core/constants/app_constants.dart`:
 ```dart
   static const String baseUrl = 'https://yourapi.com';
+  static const String appName = 'Your App Name';
 ```
 
 #### 4. Handle API errors globally
@@ -166,6 +122,48 @@ if ((err.response!.statusCode ?? 0) >= 401 &&
   // TODO: Handle from 401 to 499
   return NetworkException.fromMap(err.response!.data);
  }
+```
+
+#### 5. App Links & Deep Links
+##### To enable deep linking and app links for both iOS and Android, you need to set up the following (file examples in `applinks/apple_app_site_association and apps/assetlinks.json`):
+###### 1. IOS Universal Links
+1. Set one value in the appIDs array to `<team id>.<bundle id>`.
+
+2. Set the `paths` array to `["*"]`. The paths array specifies the allowed universal links. Using the asterisk, `*` redirects every path to the Flutter app. If needed, change the paths array value to a setting more appropriate to your app.
+
+3. Host the file at a URL that resembles the following structure.
+
+```bash
+# IOS Universal Links
+https://yourdomain.com/apple-app-site-association
+```
+4. Verify that your browser can access this file.
+
+###### 2. Android App Links
+
+1. Set the `relation` array to `["delegate_permission/common.handle_all_urls"]`. The relation array specifies the allowed app links. Using the `delegate_permission/common.handle_all_urls` relation redirects every path to the Flutter app. If needed, change the relation array value to a setting more appropriate to your app.
+2. Set the `target` object to include the `package_name` and `sha256_cert_fingerprints` of your app. The package_name is the same as the Android application ID, and the sha256_cert_fingerprints is the SHA-256 fingerprint of your app's signing certificate.
+3. Host the file at a URL that resembles the following structure.
+
+```bash
+# Android App Links
+https://yourdomain.com/.well-known/assetlinks.json
+```
+4. Verify that your browser can access this file.
+
+```json
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.yourpackage.name",
+      "sha256_cert_fingerprints": [
+        "YOUR_SHA256_FINGERPRINT"
+      ]
+    }
+  }
+]
 ```
 
 ---

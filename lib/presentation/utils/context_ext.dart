@@ -44,33 +44,6 @@ extension ContextExtension on BuildContext {
   TextTheme get textTheme => theme.textTheme;
   ColorScheme get colorScheme => theme.colorScheme;
 
-  // Navigator
-  void pop<T extends Object?>([T? result]) => Navigator.of(this).pop(result);
-  void push(Widget page) =>
-      Navigator.of(this).push(MaterialPageRoute(builder: (_) => page));
-  void pushReplacement(Widget page) => Navigator.of(
-    this,
-  ).pushReplacement(MaterialPageRoute(builder: (_) => page));
-  void pushNamed(String routeName, {Object? arguments}) {
-    Navigator.of(this).pushNamed(routeName, arguments: arguments);
-  }
-
-  void pushNamedAndRemoveUntil(
-    String routeName, {
-    Object? arguments,
-    bool Function(Route<dynamic>)? predicate,
-  }) {
-    Navigator.of(this).pushNamedAndRemoveUntil(
-      routeName,
-      predicate ?? (route) => false,
-      arguments: arguments,
-    );
-  }
-
-  void pushReplacementNamed(String routeName, {Object? arguments}) {
-    Navigator.of(this).pushReplacementNamed(routeName, arguments: arguments);
-  }
-
   // Localization
   AppLocalizations get l10n {
     final localizations = AppLocalizations.of(this);

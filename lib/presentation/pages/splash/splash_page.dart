@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_clean_blox_template/app/router/route.dart';
-import 'package:flutter_clean_blox_template/presentation/utils/context_ext.dart';
+import 'package:go_router/go_router.dart';
 
 /// =========================================================
 /// Created by Pahnal Aditia
@@ -51,6 +51,6 @@ class _SplashPageState extends State<SplashPage> {
   void _navigateToNextPage() async {
     await Future.delayed(const Duration(milliseconds: 1500));
     if (!mounted) return;
-    context.pushNamedAndRemoveUntil(AppRoute.main);
+    context.goNamed(AppRoute.main);
   }
 }

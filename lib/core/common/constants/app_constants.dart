@@ -15,6 +15,8 @@ class AppConstants {
   /// TODO : Add your application constants here
   static const String baseUrl =
       'https://yourapi.com'; // Base URL for API requests
+  static const String appName =
+      'Flutter Clean Blox Template'; // Application name
 
   // Add more constants as needed
 }
