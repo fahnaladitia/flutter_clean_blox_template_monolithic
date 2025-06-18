@@ -21,7 +21,6 @@ Created with ❤️ by [**Pahnal Aditia**](https://www.linkedin.com/in/pahnaladi
     - [For Android APK build](#for-android-apk-build)
     - [For iOS build (Note: requires macOS)](#for-ios-build-note-requires-macos)
   - [📝 Notes](#-notes)
-  - [🧪 Coming Soon](#-coming-soon)
 
 ---
 
@@ -44,6 +43,7 @@ Created with ❤️ by [**Pahnal Aditia**](https://www.linkedin.com/in/pahnaladi
 * ⚡ **Quick Start** — Minimal setup to begin development
 * 🔏 **Signed Android APK Support** — Pre-configured signing setup (`keystore` & `key.properties`) for Play Store release  
 * 🤖 **CI/CD with GitHub Actions** — Automated APK builds based on flavors (`staging`, `production`)
+* 🧪 **Testing Support** — Includes `flutter_test`, `mocktail`, `mockito`, and `bloc_test` for unit and widget testing
 
 
 
@@ -61,6 +61,8 @@ Created with ❤️ by [**Pahnal Aditia**](https://www.linkedin.com/in/pahnaladi
 | 🛡 Error Tracking       | [`sentry_flutter`](https://pub.dev/packages/sentry_flutter)                                                                                                                 |
 | 🖼 UI Assets            | [`flutter_launcher_icons`](https://pub.dev/packages/flutter_launcher_icons), [`flutter_native_splash`](https://pub.dev/packages/flutter_native_splash)                      |
 | 🧪 Flavoring Support    | Manual setup using `productFlavors`                                                                                                                                         |
+| 🧪 Testing              | [`flutter_test`](https://pub.dev/packages/flutter_test), [`mocktail`](https://pub.dev/packages/mocktail), [`mockito`](https://pub.dev/packages/mockito), [`bloc_test`](https://pub.dev/packages/bloc_test) |
+| 🧪 CI/CD                | GitHub Actions for automated APK builds                                                                                                                                    |
 
 ---
 
@@ -158,10 +160,4 @@ flutter build ipa --obfuscate --split-debug-info=out/android --flavor production
   * [Flutter App & Universal Links](https://docs.flutter.dev/cookbook/navigation/set-up-app-links)
 
 ---
-
-## 🧪 Coming Soon
-
-* [ ] ✅ **Unit & Widget Testing** — With [`flutter_test`](https://pub.dev/packages/flutter_test) & [`mocktail`](https://pub.dev/packages/mocktail)
-* [ ] ✅ **Firebase Integration** — Analytics, Auth, Firestore, Crashlytics
-* [ ] ✅ **Push Notification Setup** — With Firebase Cloud Messaging
 
