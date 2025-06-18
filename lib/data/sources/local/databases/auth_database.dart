@@ -10,11 +10,15 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 /// =========================================================
 
 class AuthDatabase {
-  final _storage = FlutterSecureStorage(
-    aOptions: AndroidOptions.defaultOptions.copyWith(
-      encryptedSharedPreferences: true,
-    ),
-  );
+  final FlutterSecureStorage _storage;
+  AuthDatabase([FlutterSecureStorage? storage])
+    : _storage =
+          storage ??
+          FlutterSecureStorage(
+            aOptions: AndroidOptions.defaultOptions.copyWith(
+              encryptedSharedPreferences: true,
+            ),
+          );
 
   static const String _userIdKey = 'user_id';
   static const String _token = 'auth_token';

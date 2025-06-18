@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_clean_blox_template/domain/usecases/auth/get_credential/get_credential_usecase.dart';
-import 'package:flutter_clean_blox_template/domain/usecases/auth/isSignedIn/is_signed_in_usecase.dart';
+import 'package:flutter_clean_blox_template/domain/usecases/auth/is_signed_in/is_signed_in_usecase.dart';
 import 'package:flutter_clean_blox_template/domain/usecases/auth/sign_in_with_email_and_password/sign_in_with_email_and_password_usecase.dart';
 import 'package:flutter_clean_blox_template/domain/usecases/auth/sign_out/sign_out_usecase.dart';
 import 'package:flutter_clean_blox_template/presentation/blocs/auth/auth_bloc.dart';

@@ -27,8 +27,8 @@ FutureOr<void> runBlocExecutor({
   try {
     await onLogicBuilder();
   } on DioException catch (e) {
-    if (e is BaseException) {
-      final baseException = e as BaseException;
+    if (e.error is BaseException) {
+      final baseException = e.error as BaseException;
 
       switch (baseException.runtimeType) {
         case const (CacheException):
@@ -64,6 +64,16 @@ FutureOr<void> runBlocExecutor({
       _handleCacheException(e, onErrorBuilder);
       return;
     }
+    if (e is ValidatorException) {
+      _handleValidatorException(e, onErrorBuilder);
+      return;
+    }
+
+    if (e is NetworkException) {
+      _handleNetworkException(e, onErrorBuilder);
+      return;
+    }
+
     _handleBaseException(e, onErrorBuilder);
   } catch (e) {
     // Handle any other unexpected exceptions
