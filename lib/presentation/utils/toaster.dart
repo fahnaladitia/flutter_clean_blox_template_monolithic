@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_clean_blox_template/presentation/utils/edge_insets_ext.dart';
+import 'package:flutter_clean_blox_template/presentation/utils/spacer_ext.dart';
 
 /// =========================================================
 /// Created by Pahnal Aditia
@@ -12,11 +14,11 @@ extension Toaster on BuildContext {
     ScaffoldMessenger.of(this).showSnackBar(
       SnackBar(
         backgroundColor: Colors.green,
-        padding: const EdgeInsets.all(8.0),
+        padding: 8.edgeAll,
         content: Row(
           children: [
             const Icon(Icons.check_circle, color: Colors.white),
-            const SizedBox(width: 8.0),
+            8.paddingX,
             Expanded(
               child: Text(message, style: const TextStyle(color: Colors.white)),
             ),
@@ -32,11 +34,11 @@ extension Toaster on BuildContext {
     ScaffoldMessenger.of(this).showSnackBar(
       SnackBar(
         backgroundColor: Colors.red,
-        padding: const EdgeInsets.all(8.0),
+        padding: 8.edgeAll,
         content: Row(
           children: [
             const Icon(Icons.error, color: Colors.white),
-            const SizedBox(width: 8.0),
+            8.paddingX,
             Expanded(
               child: Text(message, style: const TextStyle(color: Colors.white)),
             ),
@@ -52,11 +54,11 @@ extension Toaster on BuildContext {
     ScaffoldMessenger.of(this).showSnackBar(
       SnackBar(
         backgroundColor: Colors.blue,
-        padding: const EdgeInsets.all(8.0),
+        padding: 8.edgeAll,
         content: Row(
           children: [
             const Icon(Icons.info, color: Colors.white),
-            const SizedBox(width: 8.0),
+            8.paddingX,
             Expanded(
               child: Text(message, style: const TextStyle(color: Colors.white)),
             ),
@@ -72,13 +74,39 @@ extension Toaster on BuildContext {
     ScaffoldMessenger.of(this).showSnackBar(
       SnackBar(
         backgroundColor: Colors.orange,
-        padding: const EdgeInsets.all(8.0),
+        padding: 8.edgeAll,
         content: Row(
           children: [
             const Icon(Icons.warning, color: Colors.white),
-            const SizedBox(width: 8.0),
+            8.paddingX,
             Expanded(
               child: Text(message, style: const TextStyle(color: Colors.white)),
+            ),
+          ],
+        ),
+        behavior: SnackBarBehavior.floating,
+      ),
+    );
+  }
+
+  void showToasterErrorValidator({
+    required String field,
+    required String message,
+  }) {
+    ScaffoldMessenger.of(this).clearSnackBars();
+    ScaffoldMessenger.of(this).showSnackBar(
+      SnackBar(
+        backgroundColor: Colors.red,
+        padding: 8.edgeAll,
+        content: Row(
+          children: [
+            const Icon(Icons.error, color: Colors.white),
+            8.paddingX,
+            Expanded(
+              child: Text(
+                '$field: $message',
+                style: const TextStyle(color: Colors.white),
+              ),
             ),
           ],
         ),

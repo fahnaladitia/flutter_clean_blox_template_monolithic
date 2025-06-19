@@ -124,4 +124,38 @@ void main() {
     expect(find.text('Warning Message'), findsOneWidget);
     expect(find.byIcon(Icons.warning), findsOneWidget);
   });
+
+  testWidgets('showToasterErrorValidator shows validator error snackbar', (
+    WidgetTester tester,
+  ) async {
+    // Widget dasar dengan Scaffold agar context bisa memanggil ScaffoldMessenger
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Builder(
+          builder: (context) {
+            return Scaffold(
+              body: Center(
+                child: ElevatedButton(
+                  onPressed: () => context.showToasterErrorValidator(
+                    field: 'email',
+                    message: 'Invalid email format',
+                  ),
+                  child: const Text('Show Validator Error'),
+                ),
+              ),
+            );
+          },
+        ),
+      ),
+    );
+
+    // Tekan tombol
+    await tester.tap(find.text('Show Validator Error'));
+    await tester.pump(); // render pertama
+    await tester.pump(const Duration(seconds: 1)); // biar SnackBar muncul
+
+    // Verifikasi isi SnackBar
+    expect(find.text('email: Invalid email format'), findsOneWidget);
+    expect(find.byIcon(Icons.error), findsOneWidget);
+  });
 }

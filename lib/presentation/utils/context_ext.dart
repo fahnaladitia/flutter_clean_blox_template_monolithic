@@ -55,12 +55,14 @@ extension ContextExtension on BuildContext {
 
   void showError(UIError error) {
     switch (error.runtimeType) {
-      case const (ToasterUIError):
-      case const (DialogUIError):
-      case const (CustomUIError):
+      case const (MessageUIError):
         showToastError(error.message);
       case const (ValidatorUIError):
-        showToastError(error.message);
+        final validatorError = error as ValidatorUIError;
+        showToasterErrorValidator(
+          field: validatorError.fieldName,
+          message: validatorError.message,
+        );
       default:
         showToastError('An unexpected error occurred: ${error.message}');
     }

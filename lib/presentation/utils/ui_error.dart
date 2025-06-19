@@ -32,26 +32,9 @@ class ValidatorUIError extends UIError {
   List<Object> get props => [fieldName, message, code];
 }
 
-class ToasterUIError extends UIError {
-  const ToasterUIError({required super.message, required super.code});
-}
-
-class DialogUIError extends UIError {
-  final String title;
-
-  const DialogUIError({
-    required this.title,
-    required super.message,
-    required super.code,
-  });
+class MessageUIError extends UIError {
+  const MessageUIError({required super.message, required super.code});
 
   @override
-  List<Object> get props => [title, message, code];
-
-  @override
-  bool get stringify => true;
-}
-
-class CustomUIError extends UIError {
-  const CustomUIError({required super.message, required super.code});
+  List<Object> get props => [message, code];
 }

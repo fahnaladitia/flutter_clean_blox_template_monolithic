@@ -38,7 +38,7 @@ void main() {
         onErrorBuilder: (error) => capturedError = error,
       );
 
-      expect(capturedError, isA<ToasterUIError>());
+      expect(capturedError, isA<MessageUIError>());
       expect(
         capturedError?.message,
         'An error occurred while accessing the cache: disk read failure, please try again later. see logs for more details.',
@@ -62,7 +62,7 @@ void main() {
         onErrorBuilder: (error) => capturedError = error,
       );
 
-      expect(capturedError, isA<CustomUIError>());
+      expect(capturedError, isA<MessageUIError>());
       expect(capturedError?.message, 'Network fail');
       expect(capturedError?.code, 'NET_ERR');
     });
@@ -106,7 +106,7 @@ void main() {
         onErrorBuilder: (error) => capturedError = error,
       );
 
-      expect(capturedError, isA<CustomUIError>());
+      expect(capturedError, isA<MessageUIError>());
       expect(capturedError?.message, contains('No connection'));
     });
 
@@ -124,7 +124,7 @@ void main() {
         onErrorBuilder: (error) => capturedError = error,
       );
 
-      expect(capturedError, isA<CustomUIError>());
+      expect(capturedError, isA<MessageUIError>());
       expect(capturedError?.message, 'Base unknown');
     });
 
@@ -139,7 +139,7 @@ void main() {
         onErrorBuilder: (error) => capturedError = error,
       );
 
-      expect(capturedError, isA<CustomUIError>());
+      expect(capturedError, isA<MessageUIError>());
       expect(capturedError?.message, contains('Unexpected error!'));
       expect(capturedError?.code, 'UNEXPECTED_ERROR');
     });
