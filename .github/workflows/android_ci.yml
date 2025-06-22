@@ -29,6 +29,9 @@ jobs:
 
       - name: 🔍 Flutter version
         run: flutter --version
+      
+      - name: ✅ Run flutter test
+        run: flutter test
 
       - name: 🗝️ Decode keystore.jks from secret
         run: |
