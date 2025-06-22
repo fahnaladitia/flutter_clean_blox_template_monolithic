@@ -7,7 +7,7 @@ import 'package:equatable/equatable.dart';
 /// LinkedIn: https://www.linkedin.com/in/pahnaladitia
 /// =========================================================
 
-abstract class BaseException extends Equatable implements Exception {
+class BaseException extends Equatable implements Exception {
   final String code;
   final String message;
 

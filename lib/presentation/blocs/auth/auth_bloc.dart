@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_clean_blox_template/domain/models/credential.dart';
 import 'package:flutter_clean_blox_template/domain/usecases/auth/get_credential/get_credential_usecase.dart';
-import 'package:flutter_clean_blox_template/domain/usecases/auth/isSignedIn/is_signed_in_usecase.dart';
+import 'package:flutter_clean_blox_template/domain/usecases/auth/is_signed_in/is_signed_in_usecase.dart';
 import 'package:flutter_clean_blox_template/domain/usecases/auth/sign_out/sign_out_usecase.dart';
 import 'package:flutter_clean_blox_template/presentation/utils/bloc_utils.dart';
 import 'package:flutter_clean_blox_template/presentation/utils/ui_error.dart';

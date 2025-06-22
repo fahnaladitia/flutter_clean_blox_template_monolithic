@@ -27,8 +27,8 @@ FutureOr<void> runBlocExecutor({
   try {
     await onLogicBuilder();
   } on DioException catch (e) {
-    if (e is BaseException) {
-      final baseException = e as BaseException;
+    if (e.error is BaseException) {
+      final baseException = e.error as BaseException;
 
       switch (baseException.runtimeType) {
         case const (CacheException):
@@ -54,7 +54,7 @@ FutureOr<void> runBlocExecutor({
           return;
       }
     }
-    final error = CustomUIError(
+    final error = MessageUIError(
       message: e.message ?? 'An error occurred: ${e.toString()}',
       code: e.type.toString(),
     );
@@ -64,10 +64,20 @@ FutureOr<void> runBlocExecutor({
       _handleCacheException(e, onErrorBuilder);
       return;
     }
+    if (e is ValidatorException) {
+      _handleValidatorException(e, onErrorBuilder);
+      return;
+    }
+
+    if (e is NetworkException) {
+      _handleNetworkException(e, onErrorBuilder);
+      return;
+    }
+
     _handleBaseException(e, onErrorBuilder);
   } catch (e) {
     // Handle any other unexpected exceptions
-    final error = CustomUIError(
+    final error = MessageUIError(
       message: 'An unexpected error occurred: ${e.toString()}',
       code: 'UNEXPECTED_ERROR',
     );
@@ -81,14 +91,14 @@ void _handleNetworkException(
 ) {
   final message = networkException.message;
   final code = networkException.code;
-  onErrorStateBuilder(CustomUIError(message: message, code: code));
+  onErrorStateBuilder(MessageUIError(message: message, code: code));
 }
 
 void _handleCacheException(
   CacheException e,
   void Function(UIError error) onErrorStateBuilder,
 ) {
-  onErrorStateBuilder(ToasterUIError(message: e.message, code: e.code));
+  onErrorStateBuilder(MessageUIError(message: e.message, code: e.code));
 }
 
 void _handleBaseException(
@@ -97,7 +107,7 @@ void _handleBaseException(
 ) {
   final message = e.message;
   final code = e.code;
-  onErrorStateBuilder(CustomUIError(message: message, code: code));
+  onErrorStateBuilder(MessageUIError(message: message, code: code));
 }
 
 void _handleValidatorException(
