@@ -108,7 +108,7 @@ if ((err.response!.statusCode ?? 0) >= 401 &&
 }
 ```
 
-## 🔏 Your Keystore.jks & key.properties
+## 🔏 5 Your Keystore.jks & key.properties
 Place your `keystore.jks` file in `android/app/` and create a `key.properties` file with the following content:
 
 ```properties
@@ -117,3 +117,13 @@ keyPassword=your_key_password
 keyAlias=your_key_alias
 storeFile=keystore.jks
 ```
+
+## 🔑 6. Handle Github Actions
+To handle GitHub Actions, ensure you have the following secrets set up in your repository:
+
+- `ANDROID_ALIAS`
+- `ANDROID_ALIAS_PASSWORD`
+- `ANDROID_KEYSTORE`
+- `KEYSTORE_PASSWORD`
+
+You can set these secrets in your GitHub repository settings under **Settings > Secrets and variables > Actions**.
