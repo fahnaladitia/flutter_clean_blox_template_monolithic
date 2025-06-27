@@ -2,9 +2,23 @@ name: Android Release CI with Flavor & Signing
 
 on:
   push:
-    branches: ["dev"]
+    branches:
+      - "dev"
+      - "main"
+      - "firebase/dev"
+      - "firebase/main"
+    paths-ignore:
+      - 'docs/**'
+      - '**.md'
   pull_request:
-    branches: ["dev"]
+    branches:
+      - "dev"
+      - "main"
+      - "firebase/dev"
+      - "firebase/main"
+    paths-ignore:
+      - 'docs/**'
+      - '**.md'
 
 jobs:
   build:
