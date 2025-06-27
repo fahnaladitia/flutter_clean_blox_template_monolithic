@@ -2,9 +2,29 @@ name: Android Release CI with Flavor & Signing
 
 on:
   push:
-    branches: ["main"]
+    branches:
+      - "modular/dev"
+      - "modular/main"
+      - "modular-firebase/dev"
+      - "modular-firebase/main"
+      - "monolithic/dev"
+      - "monolithic/main"
+    paths-ignore:
+      - 'docs/**'
+      - '**.md'
   pull_request:
-    branches: ["main"]
+    branches:
+      - "modular/dev"
+      - "modular/main"
+      - "modular-firebase/dev"
+      - "modular-firebase/main"
+      - "monolithic/dev"
+      - "monolithic/main"
+      - "monolithic-firebase/dev"
+      - "monolithic-firebase/main"
+    paths-ignore:
+      - 'docs/**'
+      - '**.md'
 
 jobs:
   build:
