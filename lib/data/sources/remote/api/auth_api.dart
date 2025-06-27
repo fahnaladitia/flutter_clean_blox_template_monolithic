@@ -1,7 +1,7 @@
-import 'dart:convert';
+// import 'dart:convert';
 
 import 'package:dio/dio.dart';
-import 'package:flutter/services.dart' show rootBundle;
+// import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_clean_blox_template/data/sources/remote/dto/requests/sign_in_request_dto.dart';
 import 'package:flutter_clean_blox_template/data/sources/remote/dto/responses/sign_in_response_dto.dart';
 
@@ -20,16 +20,16 @@ class AuthApi {
     SignInRequestDto request,
   ) async {
     // Example of a real network request
-    // final response = await dio.post('/sign-in', data: request.toJson());
-    // return SignInResponseDto.fromJson(response.data);
+    final response = await dio.post('/sign-in', data: request.toJson());
+    return SignInResponseDto.fromJson(response.data);
 
     // Simulating a network request with a delay
-    final jsonString = await rootBundle.loadString(
-      'assets/example_responses/sign_in_response.json',
-    );
+    // final jsonString = await rootBundle.loadString(
+    //   'assets/example_responses/sign_in_response.json',
+    // );
 
-    final jsonMap = json.decode(jsonString);
+    // final jsonMap = json.decode(jsonString);
 
-    return SignInResponseDto.fromJson(jsonMap);
+    // return SignInResponseDto.fromJson(jsonMap);
   }
 }
