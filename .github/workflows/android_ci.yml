@@ -26,7 +26,7 @@ jobs:
 
     strategy:
       matrix:
-        flavor: [staging]
+        flavor: [production]
 
     steps:
       - name: 🔄 Checkout Repository
