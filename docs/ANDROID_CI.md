@@ -53,11 +53,11 @@ jobs:
 
       - name: 🗝️ Decode keystore.jks from secret
         run: |
-          echo "${{ secrets.ANDROID_KEYSTORE }}" | base64 -d > application/android/app/keystore.jks
+          echo "${{ secrets.ANDROID_KEYSTORE }}" | base64 -d > android/app/keystore.jks
 
       - name: 🗂️ Create key.properties file
         run: |
-          cat <<EOF > application/android/key.properties
+          cat <<EOF > android/key.properties
           storePassword=${{ secrets.KEYSTORE_PASSWORD }}
           keyPassword=${{ secrets.ANDROID_ALIAS_PASSWORD }}
           keyAlias=${{ secrets.ANDROID_ALIAS }}
@@ -66,13 +66,12 @@ jobs:
 
       - name: "🏗 Build Signed APK with Flavor: ${{ matrix.flavor }}"
         run: |
-          cd application
           flutter build apk --obfuscate --split-debug-info=out/android --flavor ${{ matrix.flavor }} -t lib/main_${{ matrix.flavor }}.dart
 
       - name: 📦 Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.flavor }}-release-apk
-          path: application/build/app/outputs/apk/${{ matrix.flavor }}/release/app-${{ matrix.flavor }}-release.apk
+          path: build/app/outputs/apk/${{ matrix.flavor }}/release/app-${{ matrix.flavor }}-release.apk
 
 ```
