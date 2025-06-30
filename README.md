@@ -56,6 +56,10 @@ flutter_clean_blox_template_monolithic/
 │   ├── data/                  # Data layer (repositories, models)
 │   ├── domain/                # Domain layer (use cases, entities)
 │   ├── presentation/          # Presentation layer (BLoCs, UI)
+│   ├── features/              # Feature modules (e.g., auth, home)
+├── test/                     # Unit and widget tests
+├── pubspec.yaml              # Project dependencies and metadata
+└── README.md                 # Project documentation
 ```
 
 ```bash
