@@ -53,9 +53,6 @@ flutter_clean_blox_template_monolithic/
 │   ├── app/                   # Main application entry point
 │   ├── shared/                # Shared widgets and utilities
 │   ├── core/                  # Core utilities and services
-│   ├── data/                  # Data layer (repositories, models)
-│   ├── domain/                # Domain layer (use cases, entities)
-│   ├── presentation/          # Presentation layer (BLoCs, UI)
 │   ├── features/              # Feature modules (e.g., auth, home)
 ├── test/                     # Unit and widget tests
 ├── pubspec.yaml              # Project dependencies and metadata
