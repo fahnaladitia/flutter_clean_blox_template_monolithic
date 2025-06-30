@@ -1,7 +1,7 @@
 # 🚀 Flutter CleanBLoX Template (Monolithic)
 
 A **production-ready Flutter starter kit** using **Clean Architecture** and **BLoC pattern**.
-This template is designed for **monolithic applications** with a modular monorepo structure, making it easy to scale and maintain small Flutter projects.
+This template is designed for **monolithic applications**, making it easy to scale and maintain small Flutter projects.
 
 Created with ❤️ by [**Pahnal Aditia**](https://www.linkedin.com/in/pahnaladitia)
 
