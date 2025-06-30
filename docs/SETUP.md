@@ -1,6 +1,24 @@
 # 🛠 Setup Instructions
 
-## 🔧 1. Change Package Name (Manual Flavor Setup)
+## 📖 Table of Contents
+- [🛠 Setup Instructions](#-setup-instructions)
+  - [📖 Table of Contents](#-table-of-contents)
+  - [🔧 1. Change Package Name (Manual Flavor Setup) in application](#-1-change-package-name-manual-flavor-setup-in-application)
+    - [✅ Android](#-android)
+      - [a. Update `applicationId` in `android/app/build.gradle`](#a-update-applicationid-in-androidappbuildgradle)
+      - [b. Update Kotlin Package Structure](#b-update-kotlin-package-structure)
+    - [✅ iOS](#-ios)
+      - [a. Change Bundle Identifier in Xcode](#a-change-bundle-identifier-in-xcode)
+      - [b. Setup Build Configurations](#b-setup-build-configurations)
+      - [c. Setup Schemes for Each Flavor](#c-setup-schemes-for-each-flavor)
+  - [🌐 2. App Configurations](#-2-app-configurations)
+  - [🚀 3. Sentry Initialization](#-3-sentry-initialization)
+  - [🔗 4. API Client Configuration](#-4-api-client-configuration)
+  - [🔧 5. Error Handling](#-5-error-handling)
+  - [🔏 6. Your Keystore.jks \& key.properties](#-6-your-keystorejks--keyproperties)
+  - [🔏 7. Github actions secrets](#-7-github-actions-secrets)
+
+## 🔧 1. Change Package Name (Manual Flavor Setup) in application
 
 ### ✅ Android
 
@@ -71,44 +89,104 @@ class MainActivity: FlutterActivity() {}
 
 ---
 
-## 🔐 2. Sentry Setup
+## 🌐 2. App Configurations
 
-Add your Sentry DSN in `main.dart`:
+Add your  configurations in `lib/core/config/app_config.dart`:
 
 ```dart
-await SentryFlutter.init(
-  (options) {
-    options.dsn = 'YOUR_DSN_HERE';
-  },
-  appRunner: () => runApp(MyApp()),
-);
+
+    switch (selectedFlavor) {
+      case AppFlavor.staging:
+        _config = EnvConfig(
+          baseURL: 'https://staging.example.com/api',
+          apiKey: 'staging-api-key',
+          sentryDSN: 'https://staging.sentry.io/123456',
+        );
+        break;
+      case AppFlavor.production:
+        _config = EnvConfig(
+          baseURL: 'https://api.example.com',
+          apiKey: 'production-api-key',
+          sentryDSN: 'https://sentry.example.com/123456',
+        );
+        break;
+    }
+
 ```
 
 ---
 
-## 🌐 3. API Base URL
-
-Set your API URL in `main_*.dart`:
-
-```dart
-const String baseURL = 'https://api.yourdomain.com';
-```
-
----
-
-## 🚨 4. Handle API Errors
-
-In `lib/core/config/interceptors/error_interceptor.dart`:
+##  🚀 3. Sentry Initialization
+In `lib/main_staging.dart` and `lib/main_production.dart`, initialize Sentry:
 
 ```dart
-if ((err.response!.statusCode ?? 0) >= 401 &&
-    (err.response!.statusCode ?? 0) < 500) {
-  // TODO: Handle from 401 to 499
-  return NetworkException.fromMap(err.response!.data);
+import 'package:core/config/app_config.dart';
+import 'package:core/utils/sentry_service.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  
+  await SentryService.init(app: () => runApp(const MyApp()));
 }
+
 ```
 
-## 🔏 5 Your Keystore.jks & key.properties
+---
+
+##  🔗 4. API Client Configuration
+
+In `lib/core/network/app_rest_client.dart`, configure your API client:
+
+```dart
+ // Headers can be set here if needed
+    baseOptions.headers = {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      // TODO: Replace with your actual API key
+      'x-api-key': apiKey,
+    };
+```
+
+## 🔧 5. Error Handling
+
+In `lib/core/network/error_interceptor.dart`, handle errors:
+
+```dart
+      case DioExceptionType.badResponse:
+        if (err.response == null) {
+          return NetworkException(
+            code: ErrorCodeConstants.unknownCode,
+            message: 'Unknown error occurred',
+          );
+        }
+
+        if (err.response!.statusCode == HttpStatus.badRequest) {
+          // TODO: Handle bad request error
+          return NetworkException.fromMap(err.response!.data);
+        } else if (err.response!.statusCode == HttpStatus.unauthorized) {
+          return NetworkException(
+            code: ErrorCodeConstants.unauthorizedCode,
+            message: ErrorMessageConstants.unauthorizedMessage,
+          );
+        } else if (err.response!.statusCode == HttpStatus.forbidden) {
+          return NetworkException(
+            code: ErrorCodeConstants.forbiddenCode,
+            message: ErrorMessageConstants.forbiddenMessage,
+          );
+        } else if (err.response!.statusCode == HttpStatus.notFound) {
+          return NetworkException(
+            code: ErrorCodeConstants.notFoundCode,
+            message: ErrorMessageConstants.notFoundMessage,
+          );
+        } else if (err.response!.statusCode == HttpStatus.internalServerError) {
+          return NetworkException(
+            code: ErrorCodeConstants.internalServerErrorCode,
+            message: ErrorMessageConstants.internalServerErrorMessage,
+          );
+        }
+```
+
+## 🔏 6. Your Keystore.jks & key.properties
 Place your `keystore.jks` file in `android/app/` and create a `key.properties` file with the following content:
 
 ```properties
@@ -118,12 +196,13 @@ keyAlias=your_key_alias
 storeFile=keystore.jks
 ```
 
-## 🔑 6. Handle Github Actions
-To handle GitHub Actions, ensure you have the following secrets set up in your repository:
 
-- `ANDROID_ALIAS`
-- `ANDROID_ALIAS_PASSWORD`
-- `ANDROID_KEYSTORE`
-- `KEYSTORE_PASSWORD`
+## 🔏 7. Github actions secrets
 
-You can set these secrets in your GitHub repository settings under **Settings > Secrets and variables > Actions**.
+Add the following secrets to your GitHub repository:
+
+- `ANDROID_ALIAS`: Your key alias.
+- `ANDROID_ALIAS_PASSWORD`: Your key password.
+- `ANDROID_KEYSTORE`: Base64 encoded content of your `keystore.jks` file.
+- `KEYSTORE_PASSWORD`: Your keystore password.
+

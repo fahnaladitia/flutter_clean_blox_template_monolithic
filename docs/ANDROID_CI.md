@@ -39,19 +39,17 @@ jobs:
           channel: stable
           flutter-version-file: pubspec.yaml
 
-      - name: 📦 Install melos + bootstrap
-        run: |
-          dart pub global activate melos
-          melos bootstrap
+      - name: 📦 Install Dependencies
+        run: flutter pub get
 
       - name: 🔍 Flutter version
         run: flutter --version
 
       - name: 🔧 Configure Flutter
-        run: melos analyze
+        run: flutter analyze
 
       - name: ✅ Run tests
-        run: melos test
+        run: flutter test
 
       - name: 🗝️ Decode keystore.jks from secret
         run: |
