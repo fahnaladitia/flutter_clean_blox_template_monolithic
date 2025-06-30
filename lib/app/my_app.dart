@@ -1,10 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_clean_blox_template/app/router/route.dart';
-import 'package:flutter_clean_blox_template/presentation/theme/theme.dart';
-import 'package:flutter_clean_blox_template/presentation/theme/util.dart';
-import 'package:flutter_clean_blox_template/l10n/app_localizations.dart';
-import 'package:flutter_clean_blox_template/l10n/l10n.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:flutter_clean_blox_template/shared/shared.dart';
 
 /// =========================================================
 /// Created by Pahnal Aditia
@@ -12,13 +10,24 @@ import 'package:flutter_clean_blox_template/l10n/l10n.dart';
 /// LinkedIn: https://www.linkedin.com/in/pahnaladitia
 /// =========================================================
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
   @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  void initState() {
+    super.initState();
+    FlutterNativeSplash.remove();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final TextTheme textTheme = createTextTheme(context, "Roboto", "Roboto");
-    final MaterialTheme theme = MaterialTheme(textTheme);
+    final themeLight = MaterialTheme.light();
+    final themeDark = MaterialTheme.dark();
     return MaterialApp.router(
       debugShowCheckedModeBanner: kDebugMode,
       routerConfig: AppRoute.router,
@@ -26,8 +35,8 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       // Set the default locale, you can change it based on user preference
       locale: const Locale('en'),
-      darkTheme: theme.dark(),
-      theme: theme.light(),
+      theme: themeLight,
+      darkTheme: themeDark,
     );
   }
 }

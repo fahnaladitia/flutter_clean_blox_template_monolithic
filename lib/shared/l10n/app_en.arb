@@ -1,0 +1,148 @@
+{
+  "@@locale": "en",
+  "signInDescription": "Sign in to your account",
+  "@signInDescription": {
+    "description": "Description for the sign-in page",
+    "type": "text"
+  },
+  "signInButton": "Sign In",
+  "@signInButton": {
+    "description": "Text for the sign-in button",
+    "type": "text"
+  },
+  "signUpDescription": "Create a new account",
+  "@signUpDescription": {
+    "description": "Description for the sign-up page",
+    "type": "text"
+  },
+  "signUpButton": "Sign Up",
+  "@signUpButton": {
+    "description": "Text for the sign-up button",
+    "type": "text"
+  },
+  "signIn": "Sign In",
+  "@signIn": {
+    "description": "Title for the sign-in page",
+    "type": "text"
+  },
+  "signUp": "Sign Up",
+  "@signUp": {
+    "description": "Title for the sign-up page",
+    "type": "text"
+  },
+  "name": "Name",
+  "@name": {
+    "description": "Label for the name input field",
+    "type": "text"
+  },
+  "nameHint": "Enter your full name",
+  "@nameHint": {
+    "description": "Hint text for the name input field",
+    "type": "text"
+  },
+  "email": "Email",
+  "@email": {
+    "description": "Label for the email input field",
+    "type": "text"
+  },
+  "emailHint": "Enter your email address",
+  "@emailHint": {
+    "description": "Hint text for the email input field",
+    "type": "text"
+  },
+  "password": "Password",
+  "@password": {
+    "description": "Label for the password input field",
+    "type": "text"
+  },
+  "passwordHint": "Enter your password",
+  "@passwordHint": {
+    "description": "Hint text for the password input field",
+    "type": "text"
+  },
+  "confirmPassword": "Confirm Password",
+  "@confirmPassword": {
+    "description": "Label for the confirm password input field",
+    "type": "text"
+  },
+  "confirmPasswordHint": "Re-enter your password",
+  "@confirmPasswordHint": {
+    "description": "Hint text for the confirm password input field",
+    "type": "text"
+  },
+  "forgotPassword": "Forgot Password?",
+  "@forgotPassword": {
+    "description": "Text for the forgot password link",
+    "type": "text"
+  },
+  "resetPassword": "Reset Password",
+  "@resetPassword": {
+    "description": "Text for the reset password button",
+    "type": "text"
+  },
+  "home": "Home",
+  "@home": {
+    "description": "Title for the home page",
+    "type": "text"
+  },
+  "homeDescription": "Welcome to the home page",
+  "@homeDescription": {
+    "description": "Description for the home page",
+    "type": "text"
+  },
+  "account": "Account",
+  "@account": {
+    "description": "Title for the account page",
+    "type": "text"
+  },
+  "accountDescription": "View and edit your account information",
+  "@accountDescription": {
+    "description": "Description for the account page",
+    "type": "text"
+  },
+  "signOut": "Sign Out",
+  "@signOut": {
+    "description": "Text for the sign-out button",
+    "type": "text"
+  },
+  "buttons": "Buttons",
+  "@buttons": {
+    "description": "Title for the buttons preview page",
+    "type": "text"
+  },
+  "inputs": "Inputs",
+  "@inputs": {
+    "description": "Title for the inputs preview page",
+    "type": "text"
+  },
+  "inputsPreviewDescription": "This is a preview page for inputs. You can see how the inputs look like and their states.",
+  "@inputsPreviewDescription": {
+    "description": "Description for the inputs preview page",
+    "type": "text"
+  },
+  "buttonsPreviewDescription": "This is a preview page for buttons. You can see how the buttons look like and their states.",
+  "@buttonsPreviewDescription": {
+    "description": "Description for the buttons preview page",
+    "type": "text"
+  },
+  "selections": "Selections",
+  "@selections": {
+    "description": "Title for the selections preview page",
+    "type": "text"
+  },
+  "selectionsPreviewDescription": "This is a preview page for selections. You can see how the selections look like and their states.",
+  "@selectionsPreviewDescription": {
+    "description": "Description for the selections preview page",
+    "type": "text"
+  },
+  "texts": "Texts",
+  "@texts": {
+    "description": "Title for the texts preview page",
+    "type": "text"
+  },
+  "textsPreviewDescription": "This is a preview page for texts. You can see how some texts look like and their type styles.",
+  "@textsPreviewDescription": {
+    "description": "Description for the texts preview page",
+    "type": "text"
+  }
+}

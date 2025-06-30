@@ -1,12 +1,11 @@
-import 'dart:io';
+import 'package:flutter_clean_blox_template/app/presentation/pages/main/main_auth_page.dart';
+import 'package:flutter_clean_blox_template/app/presentation/pages/splash/splash_page.dart';
+import 'package:flutter_clean_blox_template/core/core.dart';
 
-import 'package:chucker_flutter/chucker_flutter.dart';
-import 'package:go_router/go_router.dart';
-
-import 'package:flutter_clean_blox_template/presentation/pages/main/main_page.dart';
-import 'package:flutter_clean_blox_template/presentation/pages/sign_in/sign_in_page.dart';
-import 'package:flutter_clean_blox_template/presentation/pages/splash/splash_page.dart';
-import 'package:sentry_flutter/sentry_flutter.dart';
+import 'package:flutter_clean_blox_template/app/presentation/pages/main/main_page.dart';
+import 'package:flutter_clean_blox_template/app/presentation/pages/splash/splash_auth_page.dart';
+import 'package:flutter_clean_blox_template/features/auth/presentation/pages/sign_in_page.dart';
+import 'package:flutter_clean_blox_template/features/auth/presentation/pages/sign_up_page.dart';
 
 /// =========================================================
 /// Created by Pahnal Aditia
@@ -17,41 +16,40 @@ import 'package:sentry_flutter/sentry_flutter.dart';
 class AppRoute {
   AppRoute._();
 
-  /// Define your route paths
-  static const String mainPath = '/main';
-  static const String signInPath = '/sign-in';
-  static const String splashPath = '/splash';
-
-  /// Define your route names
-  static const String main = 'main';
-  static const String signIn = 'sign-in';
-  static const String splash = 'splash';
-
   /// Create and expose your router instance
-  static final GoRouter router = GoRouter(
-    initialLocation: Platform.isAndroid ? splashPath : mainPath,
+  static final router = AppNavigation.router(
+    initialLocation: '/splash',
     observers: [
-      SentryNavigatorObserver(),
-      ChuckerFlutter.navigatorObserver,
-      // Add any other observers if needed
+      SentryService.navigatorObserver,
+      ChuckerFlutterUtils.navigatorObserver,
     ],
-    routes: [
-      GoRoute(
-        path: mainPath,
-        name: main,
-        builder: (context, state) => const MainPage(),
+    pages: [
+      AppPage(
+        path: "/",
+        transitionType: AppPageTranstionType.none,
+        builder: (context, state) => MainPage(),
       ),
-      GoRoute(
-        path: signInPath,
-        name: signIn,
-        builder: (context, state) => const SignInPage(),
-      ),
-      GoRoute(
-        path: splashPath,
-        name: splash,
-        builder: (context, state) => const SplashPage(),
-      ),
+      AppPage(path: "/splash", builder: (_, _) => const SplashPage()),
     ],
     errorBuilder: (context, state) => const MainPage(),
+  );
+
+  static final routerWithAuth = AppNavigation.router(
+    initialLocation: '/splash',
+    observers: [
+      SentryService.navigatorObserver,
+      ChuckerFlutterUtils.navigatorObserver,
+    ],
+    pages: [
+      AppPage(path: '/', builder: (context, state) => MainAuthPage()),
+      AppPage(path: '/splash', builder: (_, __) => const SplashAuthPage()),
+      AppPage(
+        path: '/sign-in',
+        transitionType: AppPageTranstionType.none,
+        builder: (_, __) => SignInPage(),
+      ),
+      AppPage(path: '/sign-up', builder: (_, __) => const SignUpPage()),
+    ],
+    errorBuilder: (context, state) => const MainAuthPage(),
   );
 }

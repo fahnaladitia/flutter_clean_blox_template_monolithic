@@ -1,0 +1,148 @@
+{
+  "@@locale": "id",
+  "signInDescription": "Masuk ke akun Anda",
+  "@signInDescription": {
+    "description": "Deskripsi untuk halaman masuk",
+    "type": "text"
+  },
+  "signInButton": "Masuk",
+  "@signInButton": {
+    "description": "Teks untuk tombol masuk",
+    "type": "text"
+  },
+  "signUpDescription": "Buat akun baru",
+  "@signUpDescription": {
+    "description": "Deskripsi untuk halaman pendaftaran",
+    "type": "text"
+  },
+  "signUpButton": "Daftar",
+  "@signUpButton": {
+    "description": "Teks untuk tombol daftar",
+    "type": "text"
+  },
+  "email": "Email",
+  "@email": {
+    "description": "Label untuk kolom input email",
+    "type": "text"
+  },
+  "emailHint": "Masukkan alamat email Anda",
+  "@emailHint": {
+    "description": "Teks petunjuk untuk kolom input email",
+    "type": "text"
+  },
+  "password": "Kata Sandi",
+  "@password": {
+    "description": "Label untuk kolom input kata sandi",
+    "type": "text"
+  },
+  "passwordHint": "Masukkan kata sandi Anda",
+  "@passwordHint": {
+    "description": "Teks petunjuk untuk kolom input kata sandi",
+    "type": "text"
+  },
+  "confirmPassword": "Konfirmasi Kata Sandi",
+  "@confirmPassword": {
+    "description": "Label untuk kolom input konfirmasi kata sandi",
+    "type": "text"
+  },
+  "confirmPasswordHint": "Masukkan kembali kata sandi Anda",
+  "@confirmPasswordHint": {
+    "description": "Teks petunjuk untuk kolom input konfirmasi kata sandi",
+    "type": "text"
+  },
+  "forgotPassword": "Lupa Kata Sandi?",
+  "@forgotPassword": {
+    "description": "Teks untuk tautan lupa kata sandi",
+    "type": "text"
+  },
+  "resetPassword": "Atur Ulang Kata Sandi",
+  "@resetPassword": {
+    "description": "Teks untuk tombol atur ulang kata sandi",
+    "type": "text"
+  },
+  "home": "Beranda",
+  "@home": {
+    "description": "Teks untuk halaman beranda",
+    "type": "text"
+  },
+  "homeDescription": "Selamat datang di halaman beranda",
+  "@homeDescription": {
+    "description": "Deskripsi untuk halaman beranda",
+    "type": "text"
+  },
+  "account": "Akun",
+  "@account": {
+    "description": "Teks untuk halaman akun",
+    "type": "text"
+  },
+  "accountDescription": "Kelola informasi akun Anda",
+  "@accountDescription": {
+    "description": "Deskripsi untuk halaman akun",
+    "type": "text"
+  },
+  "signOut": "Keluar",
+  "@signOut": {
+    "description": "Teks untuk tombol keluar",
+    "type": "text"
+  },
+  "signIn": "Masuk",
+  "@signIn": {
+    "description": "Teks untuk judul halaman masuk",
+    "type": "text"
+  },
+  "signUp": "Daftar",
+  "@signUp": {
+    "description": "Teks untuk judul halaman pendaftaran",
+    "type": "text"
+  },
+  "name": "Nama",
+  "@name": {
+    "description": "Label untuk kolom input nama",
+    "type": "text"
+  },
+  "nameHint": "Masukkan nama lengkap Anda",
+  "@nameHint": {
+    "description": "Teks petunjuk untuk kolom input nama",
+    "type": "text"
+  },
+  "buttons": "Tombol",
+  "@buttons": {
+    "description": "Teks untuk halaman tombol",
+    "type": "text"
+  },
+  "inputs": "Input",
+  "@inputs": {
+    "description": "Teks untuk halaman input",
+    "type": "text"
+  },
+  "inputsPreviewDescription": "Ini adalah halaman pratinjau untuk input. Anda dapat melihat bagaimana input terlihat dan statusnya.",
+  "@inputsPreviewDescription": {
+    "description": "Deskripsi untuk halaman pratinjau input",
+    "type": "text"
+  },
+  "buttonsPreviewDescription": "Ini adalah halaman pratinjau untuk tombol. Anda dapat melihat bagaimana tombol terlihat dan statusnya.",
+  "@buttonsPreviewDescription": {
+    "description": "Deskripsi untuk halaman pratinjau tombol",
+    "type": "text"
+  },
+  "selections": "Pilihan",
+  "@selections": {
+    "description": "Teks untuk halaman pilihan",
+    "type": "text"
+  },
+  "selectionsPreviewDescription": "Ini adalah halaman pratinjau untuk pilihan. Anda dapat melihat bagaimana pilihan terlihat dan statusnya.",
+  "@selectionsPreviewDescription": {
+    "description": "Deskripsi untuk halaman pratinjau pilihan",
+    "type": "text"
+  },
+  "texts": "Teks",
+  "@texts": {
+    "description": "Teks untuk halaman teks",
+    "type": "text"
+  },
+  "textsPreviewDescription": "Ini adalah halaman pratinjau untuk teks. Anda dapat melihat bagaimana beberapa teks terlihat dan gaya tipografinya.",
+  "@textsPreviewDescription": {
+    "description": "Deskripsi untuk halaman pratinjau teks",
+    "type": "text"
+  }
+}
