@@ -83,7 +83,6 @@ class BasicCheckbox extends StatefulWidget {
 class _BasicCheckboxState extends State<BasicCheckbox> {
   late BasicSelectionController _controller;
 
-  bool get _isDarkMode => Theme.of(context).brightness == Brightness.dark;
   bool get _isSelected => _controller.state;
   BasicSelectionState get _state => widget.state;
 
@@ -146,14 +145,8 @@ class _BasicCheckboxState extends State<BasicCheckbox> {
   }
 
   Widget _buildCheck(BuildContext context) {
-    final checkColor =
-        widget.checkColor ??
-        (_isDarkMode ? Theme.of(context).colorScheme.primary : Colors.white);
-    final backgroundColor =
-        widget.backgroundColor ??
-        (_isDarkMode
-            ? Theme.of(context).colorScheme.secondaryContainer
-            : Theme.of(context).colorScheme.primary);
+    final checkColor = widget.checkColor;
+    final backgroundColor = widget.backgroundColor;
 
     double desiredSize = 24.0;
 
@@ -169,8 +162,8 @@ class _BasicCheckboxState extends State<BasicCheckbox> {
 
   Transform _buildAdaptiveCheckbox(
     double desiredSize,
-    Color checkColor,
-    Color backgroundColor,
+    Color? checkColor,
+    Color? backgroundColor,
   ) {
     final platform = Theme.of(context).platform;
     switch (platform) {
@@ -185,9 +178,11 @@ class _BasicCheckboxState extends State<BasicCheckbox> {
 
   Transform _buildiOSCheckbox(
     double desiredSize,
-    Color checkColor,
-    Color backgroundColor,
+    Color? checkColor,
+    Color? backgroundColor,
   ) {
+    checkColor ??= Theme.of(context).colorScheme.onPrimary;
+    backgroundColor ??= Theme.of(context).colorScheme.primary;
     return Transform.scale(
       scale: desiredSize / 18.0,
       child: CupertinoCheckbox(
@@ -202,8 +197,8 @@ class _BasicCheckboxState extends State<BasicCheckbox> {
 
   Transform _buildAndroidCheckbox(
     double desiredSize,
-    Color checkColor,
-    Color backgroundColor,
+    Color? checkColor,
+    Color? backgroundColor,
   ) {
     return Transform.scale(
       scale: desiredSize / 24.0,
