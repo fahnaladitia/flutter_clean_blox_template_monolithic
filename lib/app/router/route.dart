@@ -36,6 +36,7 @@ class AppRoute {
 
   static final routerWithAuth = AppNavigation.router(
     initialLocation: '/splash',
+    debugLogDiagnostics: true,
     observers: [
       SentryService.navigatorObserver,
       ChuckerFlutterUtils.navigatorObserver,
