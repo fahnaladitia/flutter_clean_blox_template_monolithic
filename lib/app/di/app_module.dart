@@ -1,6 +1,4 @@
 import 'package:flutter_clean_blox_template/core/core.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_clean_blox_template/shared/themes/themes.dart';
 
 class AppModule extends BaseModule {
   @override
@@ -23,20 +21,6 @@ class AppModule extends BaseModule {
 
       return client;
     });
-
-    final themeDark = await MaterialTheme.loadDarkTheme();
-    final themeLight = await MaterialTheme.loadLightTheme();
-
-    // Color scheme and themes
-    sl.registerLazySingleton<ThemeData>(
-      () => themeLight ?? ThemeData.light(),
-      instanceName: MaterialTheme.lightThemeInstance,
-    );
-
-    sl.registerLazySingleton<ThemeData>(
-      () => themeDark ?? ThemeData.dark(),
-      instanceName: MaterialTheme.darkThemeInstance,
-    );
 
     AppLogger.info('AppModule initialized successfully.');
   }
