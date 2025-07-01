@@ -52,14 +52,14 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             
-            <meta-data android:name="flutter_deeplinking_enabled" android:value="false" />
+            <meta-data android:name="flutter_deeplinking_enabled" android:value="true" />
 
            <!-- App Link sample -->
             <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="https" android:host="www.example.com" android:pathPrefix="/foo" />
+                <data android:scheme="https" android:host="www.example.com" />
             </intent-filter>
 
             <!-- Deep Link sample -->
@@ -69,7 +69,10 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <!-- Add optional android:host to distinguish your app
                     from others in case of conflicting scheme name -->
-                <data android:scheme="sample" android:host="open.my.app" />
+                <data 
+                    android:scheme="sample" 
+                    android:host="open" 
+                     />
                 <!-- <data android:scheme="sample" /> -->
             </intent-filter>
         </activity>
