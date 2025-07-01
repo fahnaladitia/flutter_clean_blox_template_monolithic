@@ -1,7 +1,7 @@
 # 🚀 Flutter CleanBLoX Template (Monolithic)
 
 A **production-ready Flutter starter kit** using **Clean Architecture** and **BLoC pattern**.
-This template is designed for **monolithic applications** with a modular monorepo structure, making it easy to scale and maintain small Flutter projects.
+This template is designed for **monolithic applications**, making it easy to scale and maintain small Flutter projects.
 
 Created with ❤️ by [**Pahnal Aditia**](https://www.linkedin.com/in/pahnaladitia)
 
@@ -29,7 +29,6 @@ Created with ❤️ by [**Pahnal Aditia**](https://www.linkedin.com/in/pahnaladi
 
 - **Clean Architecture**: Separate layers for data, domain, and presentation.
 - **BLoC Pattern**: Reactive programming with BLoC for state management.
-- **Modular Monorepo**: Organized structure for large applications with multiple features.
 - **Flavors**: Support for multiple environments (staging, production).
 - **Dependency Injection**: Using [GetIt](https://pub.dev/packages/get_it) for service locator.
 - **Networking**: [Dio](https://pub.dev/packages/dio) for HTTP requests with interceptors.
@@ -147,5 +146,5 @@ flutter build ipa --obfuscate --split-debug-info=out/android --flavor production
 Fork this template, plug in your logic, and ship your next big thing! 🎯
 
 ## FYI
-This template is designed for **monolithic applications** with a modular monorepo structure, making it easy to scale and maintain small Flutter projects.
+This template is designed for **monolithic applications** with single packages and feature-based, making it easy to scale and maintain small Flutter projects.
 If you are looking for a **modular architecture** with multiple packages, check out the [Flutter CleanBLoX Template (Modular)](https://github.com/fahnaladitia/flutter_clean_blox_template_modular).
