@@ -1,7 +1,8 @@
-## # Android Release CI with Flavor & Signing
+## Android GitHub CI Configuration for Building Signed APKs
+This configuration file is designed to build signed APKs for an Android application using GitHub Actions. It supports multiple flavors of the application, allowing you to specify which flavor to build at runtime. The configuration includes steps for checking out the code, installing dependencies, analyzing the code, running tests, decoding the keystore, generating the `key.properties` file, and finally building the APK for the specified flavor.
 
 ```yml
-name: Android Release CI with Flavor & Signing
+name: Android GitHub CI
 
 on:
   push:

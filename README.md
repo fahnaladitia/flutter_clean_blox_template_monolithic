@@ -36,7 +36,7 @@ Created with ❤️ by [**Pahnal Aditia**](https://www.linkedin.com/in/pahnaladi
 - **Localization**: Built-in support for multiple languages using [intl](https://pub.dev/packages/intl).
 - **Routing**: [go_router](https://pub.dev/packages/go_router) for declarative routing.
 - **Testing**: Unit and widget tests with [flutter_test](https://api.flutter.dev/flutter/flutter_test/flutter_test-library.html).
-- **CI/CD**: GitHub Actions for automated builds and tests.
+- **CI/CD**: GitHub Actions & CircleCI configurations for automated builds.
 - **App Links**: Universal links for Android and iOS.
 
 ---
@@ -76,7 +76,8 @@ See [SETUP.md](docs/SETUP.md) for customizing your app’s name and flavors.
 See [APPLINKS.md](docs/APPLINKS.md) for universal link configuration for Android & iOS.
 
 - CI/CD Configuration and Automated Builds:
-See [ANDROID_CI.md](docs/ANDROID_CI.md) for setting up GitHub Actions for automated builds.
+See [ANDROID_GITHUB_CI.md](docs/ANDROID_GITHUB_CI.md) for setting up GitHub Actions for automated builds.
+See [ANDROID_CIRCLE_CI.md](docs/ANDROID_CIRCLE_CI.md) for setting up CircleCI for automated builds.
 
 ### ▶️ Running the App
 
@@ -136,7 +137,7 @@ flutter build ipa --obfuscate --split-debug-info=out/android --flavor production
 - **Testing & Logging**: [Chucker Flutter](https://pub.dev/packages/chucker_flutter), [Cote Network Logger](https://pub.dev/packages/cote_network_logger)  
 - **UI Tooling**: [Flutter Launcher Icons](https://pub.dev/packages/flutter_launcher_icons), [Flutter Native Splash](https://pub.dev/packages/flutter_native_splash)  
 - **Flavor Management**: [Flutter Flavors](https://docs.flutter.dev/deployment/flavors)  
-- **CI/CD**: GitHub Actions integrated  
+- **CI/CD**: GitHub Actions & CircleCI configurations for automated builds.
 - **App Link Setup**: [App & Universal Links](https://docs.flutter.dev/cookbook/navigation/set-up-app-links)
 
 ---
