@@ -18,7 +18,6 @@ Created with ❤️ by [**Pahnal Aditia**](https://www.linkedin.com/in/pahnaladi
     - [📦 Building APK \& IPA](#-building-apk--ipa)
       - [📱 Android APK](#-android-apk)
       - [🍏 iOS IPA](#-ios-ipa)
-  - [Overview Widgets](#overview-widgets)
   - [📝 Developer Notes](#-developer-notes)
   - [🚀 Ready to Launch?](#-ready-to-launch)
   - [FYI](#fyi)
@@ -112,18 +111,6 @@ flutter build ipa --obfuscate --split-debug-info=out/android --flavor staging -t
 flutter build ios --flavor production -t lib/main_production.dart
 flutter build ipa --obfuscate --split-debug-info=out/android --flavor production -t lib/main_production.dart
 ```
-
----
-
-
-## Overview Widgets
-
-<p float="left">
-  <img src="docs/media/button.gif" width="200" />
-  <img src="docs/media/inputs.gif" width="200" />
-  <img src="docs/media/switchs.gif" width="200" />
-  <img src="docs/media/checkboxs.gif" width="200" />
-</p>
 
 ---
 
