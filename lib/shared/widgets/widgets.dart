@@ -16,7 +16,6 @@ part 'text_fields/basic_text_field.dart';
 part 'selections/basic_selection_controller.dart';
 part 'selections/basic_switch.dart';
 part 'selections/basic_checkbox.dart';
-part 'selections/basic_slider.dart';
 part 'selections/state.dart';
 part 'selections/type.dart';
 
